@@ -26,14 +26,14 @@ Read Sections 3.2 and 3.3 in *An Introduction to Statistical Learning - with App
 
 After completing this lab, you should be able to:
 
-- distinguish between outcome and predictor variables
-- explain the basic idea behind linear regression
-- fit a simple linear regression model in R
-- interpret the intercept and slope
-- calculate predicted values
-- understand the difference between observed and predicted values
-- calculate prediction errors
-- explain why we separate training, and test data
+-   distinguish between outcome and predictor variables
+-   explain the basic idea behind linear regression
+-   fit a simple linear regression model in R
+-   interpret the intercept and slope
+-   calculate predicted values
+-   understand the difference between observed and predicted values
+-   calculate prediction errors
+-   explain why we separate training, and test data
 
 ### Prepare the R session
 
@@ -63,13 +63,19 @@ df <- read.csv("Data/regression_data.csv")
 Take a first look at the data.
 
 ```{r}
-
+head(df)
 ```
 
 Inspect the descriptive statistics.
 
 ```{r}
+summary(df)
+```
 
+Histogram
+
+```{r}
+histogram(df$sales)
 ```
 
 #### Questions
@@ -84,13 +90,13 @@ Inspect the descriptive statistics.
 
 In supervised learning, we distinguish between outcome variables and predictor variables.
 
-- The **outcome variable** is the variable we want to explain or predict.
-- The **predictor variables** contain information that we use to make that prediction.
+-   The **outcome variable** is the variable we want to explain or predict.
+-   The **predictor variables** contain information that we use to make that prediction.
 
 We will start with a simple linear regression model with only one predictor. Suppose we want to predict `sales` using `marketing`. In this case:
 
-- `sales` is the outcome variable;
-- `marketing` is the predictor variable.
+-   `sales` is the outcome variable;
+-   `marketing` is the predictor variable.
 
 We can write this relationship as:
 
@@ -103,7 +109,13 @@ This simply means that we are interested in whether information about marketing 
 Before fitting a model, we should always explore the data. Because both variables are quantitative, a scatter plot is useful.
 
 ```{r}
-
+scatterplot(
+  df,
+  marketing,
+  sales,
+  xlab = "Marketing",
+  ylab = "Sales"
+)
 ```
 
 #### Questions
@@ -120,10 +132,10 @@ $$\hat{y} = b_0 + b_1x$$
 
 where:
 
-- $\hat{y}$ is the predicted value of the outcome
-- $b_0$ is the **intercept**
-- $b_1$ is the **slope**
-- $x$ is the predictor variable
+-   $\hat{y}$ is the predicted value of the outcome
+-   $b_0$ is the **intercept**
+-   $b_1$ is the **slope**
+-   $x$ is the predictor variable
 
 For our example:
 
@@ -136,19 +148,22 @@ The model tries to find the line that best represents the relationship between m
 We use the `lm()` function to estimate a linear regression model.
 
 ```{r}
-
+model <- lm(
+  sales ~ marketing,
+  data = df
+)
 ```
 
 View the estimated coefficients.
 
 ```{r}
-
+coef(model)
 ```
 
 You can also inspect a more detailed model summary.
 
 ```{r}
-
+summary(model)
 ```
 
 #### Questions
@@ -175,7 +190,14 @@ The intercept of 20 means that the model predicts sales of 20 when marketing is 
 We can add the fitted regression line to the scatter plot.
 
 ```{r}
-
+plot_regression_line(
+  data = df,
+  model = model,
+  xvar = marketing,
+  yvar = sales,
+  xlab = "Marketing",
+  ylab = "Sales"
+)
 ```
 
 #### Questions
@@ -189,7 +211,14 @@ We can add the fitted regression line to the scatter plot.
 Once we have fitted a model, we can use it to make predictions. Suppose marketing is equal to 30.
 
 ```{r}
+new_customer <- data.frame(
+  marketing = 30
+)
 
+predict(
+  model,
+  newdata = new_customer
+)
 ```
 
 #### Questions
@@ -202,19 +231,22 @@ Once we have fitted a model, we can use it to make predictions. Suppose marketin
 We can also calculate a prediction for every observation in the dataset.
 
 ```{r}
-
+df <- df |>
+  mutate(
+    predicted_sales = predict(model)
+  )
 ```
 
 Inspect the results.
 
 ```{r}
-
+head(df)
 ```
 
 We now have:
 
-- the observed value: `sales`;
-- the model's prediction: `predicted_sales`.
+-   the observed value: `sales`;
+-   the model's prediction: `predicted_sales`.
 
 ### Prediction error
 
@@ -243,18 +275,18 @@ We can plot errors with a residual plot:
 
 Each point shows the prediction error for one observation. The dashed horizontal line represents an error of zero, meaning that the prediction was exactly correct.
 
-- Points above zero are observations where the model predicted too little.
-- Points below zero are observations where the model predicted too much.
-- Points close to zero represent relatively accurate predictions.
+-   Points above zero are observations where the model predicted too little.
+-   Points below zero are observations where the model predicted too much.
+-   Points close to zero represent relatively accurate predictions.
 
 #### Questions
 
-- Are the errors generally centered around zero?
-- Are there observations with particularly large errors?
-- Do you see any systematic pattern in the errors?
-- Find an observation with a positive error. What does a positive error mean?
-- Find an observation with a negative error. What does a negative error mean?
-- Would a perfect model have large or small errors?
+-   Are the errors generally centered around zero?
+-   Are there observations with particularly large errors?
+-   Do you see any systematic pattern in the errors?
+-   Find an observation with a positive error. What does a positive error mean?
+-   Find an observation with a negative error. What does a negative error mean?
+-   Would a perfect model have large or small errors?
 
 ### Measure prediction error
 
@@ -368,13 +400,13 @@ K-means and linear regression represent two different types of machine learning.
 
 **K-means clustering** is unsupervised:
 
-- there is no outcome variable;
-- the algorithm searches for groups in the data.
+-   there is no outcome variable;
+-   the algorithm searches for groups in the data.
 
 **Linear regression** is supervised:
 
-- there is an outcome variable;
-- predictors are used to explain or predict the outcome.
+-   there is an outcome variable;
+-   predictors are used to explain or predict the outcome.
 
 In this lab, we introduced part of a basic supervised learning workflow:
 

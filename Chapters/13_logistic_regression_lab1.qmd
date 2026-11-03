@@ -359,6 +359,8 @@ table(
 )
 ```
 
+**Compare with a table!**
+
 #### Questions
 
 1.  What happens to the number of positive predictions when the threshold decreases?
@@ -366,7 +368,9 @@ table(
 3.  How does changing the threshold affect false positives and false negatives?
 4.  Why might a company deliberately choose a threshold other than 0.50?
 
-## Training and Test Data
+**Candidate models**
+
+## (next lab) Training and Test Data
 
 So far, we have fitted and evaluated the model using the same data. This is useful for understanding how logistic regression works, but it does not tell us how well the model will classify **new observations**. As in the previous lab, we divide the data into two parts:
 
