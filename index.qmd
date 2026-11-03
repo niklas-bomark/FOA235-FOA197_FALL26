@@ -4,7 +4,7 @@ title: "Introduction"
 
 # Welcome
 
-Welcome to the **FOA235 course book** for HT26.
+Welcome to the **FOA235/197 course book** for HT26.
 
 This book contains the main R code, examples, and practical exercises that we will work with throughout the course. It is intended to support the lectures, labs, and seminars and to serve as a reference when you work independently with R and the course assignments.
 

@@ -1,0 +1,47 @@
+---
+title: "INL1"
+author: "Niklas Bomark"
+date: "2026-09-10"
+format: pdf
+editor: 
+  markdown: 
+    wrap: sentence
+  editor: visual
+---
+
+## Introduction
+
+Write your introduction here.
+
+
+## Data Description
+
+Describe your dataset and define your variables here.
+
+```{r}
+# Insert code chunks wherever needed
+```
+
+## Exploratory Data Analysis
+
+Present and illustrate your exploratory data analysis (EDA) here.
+
+
+## Example 1 (Method 1) - Logistic Regression
+
+Present and illustrate your first analysis here.
+
+
+## Example 2 (Method 2) - Regression Analysis
+
+Present and illustrate your second analysis here.
+
+
+## My View of Analysis
+
+Describe your perspective on data analysis here.
+
+
+## References
+
+Add your references here.
