@@ -282,7 +282,7 @@ window.Quarto = {
   <li><a href="#precision-recall-and-specificity" id="toc-precision-recall-and-specificity" class="nav-link" data-scroll-target="#precision-recall-and-specificity"><span class="header-section-number">13.2.6</span> Precision, Recall, and Specificity</a></li>
   <li><a href="#change-the-classification-threshold" id="toc-change-the-classification-threshold" class="nav-link" data-scroll-target="#change-the-classification-threshold"><span class="header-section-number">13.2.7</span> Change the Classification Threshold</a></li>
   </ul></li>
-  <li><a href="#training-and-test-data" id="toc-training-and-test-data" class="nav-link" data-scroll-target="#training-and-test-data"><span class="header-section-number">13.3</span> Training and Test Data</a>
+  <li><a href="#next-lab-training-and-test-data" id="toc-next-lab-training-and-test-data" class="nav-link" data-scroll-target="#next-lab-training-and-test-data"><span class="header-section-number">13.3</span> (next lab) Training and Test Data</a>
   <ul class="collapse">
   <li><a href="#split-the-data" id="toc-split-the-data" class="nav-link" data-scroll-target="#split-the-data"><span class="header-section-number">13.3.1</span> Split the Data</a></li>
   <li><a href="#fit-the-model-using-training-data" id="toc-fit-the-model-using-training-data" class="nav-link" data-scroll-target="#fit-the-model-using-training-data"><span class="header-section-number">13.3.2</span> Fit the Model Using Training Data</a></li>
@@ -760,6 +760,7 @@ Actual   0   1
      1 126  91</code></pre>
 </div>
 </div>
+<p><strong>Compare with a table!</strong></p>
 <section id="questions-8" class="level4" data-number="13.2.7.1">
 <h4 data-number="13.2.7.1" class="anchored" data-anchor-id="questions-8"><span class="header-section-number">13.2.7.1</span> Questions</h4>
 <ol type="1">
@@ -768,11 +769,12 @@ Actual   0   1
 <li>How does changing the threshold affect false positives and false negatives?</li>
 <li>Why might a company deliberately choose a threshold other than 0.50?</li>
 </ol>
+<p><strong>Candidate models</strong></p>
 </section>
 </section>
 </section>
-<section id="training-and-test-data" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="training-and-test-data"><span class="header-section-number">13.3</span> Training and Test Data</h2>
+<section id="next-lab-training-and-test-data" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="next-lab-training-and-test-data"><span class="header-section-number">13.3</span> (next lab) Training and Test Data</h2>
 <p>So far, we have fitted and evaluated the model using the same data. This is useful for understanding how logistic regression works, but it does not tell us how well the model will classify <strong>new observations</strong>. As in the previous lab, we divide the data into two parts:</p>
 <ul>
 <li><strong>training data</strong> — used to fit and develop the model;</li>
@@ -849,18 +851,18 @@ glm(formula = purchase ~ website_visits, family = binomial, data = train_data)
 
 Coefficients:
                Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)    -2.60299    0.47611  -5.467 4.57e-08 ***
-website_visits  0.34699    0.05873   5.908 3.46e-09 ***
+(Intercept)    -2.87660    0.47294  -6.082 1.18e-09 ***
+website_visits  0.38286    0.05923   6.464 1.02e-10 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 386.43  on 279  degrees of freedom
-Residual deviance: 341.44  on 278  degrees of freedom
-AIC: 345.44
+    Null deviance: 387.25  on 279  degrees of freedom
+Residual deviance: 331.42  on 278  degrees of freedom
+AIC: 335.42
 
-Number of Fisher Scoring iterations: 3</code></pre>
+Number of Fisher Scoring iterations: 4</code></pre>
 </div>
 </div>
 </section>
@@ -901,8 +903,8 @@ Number of Fisher Scoring iterations: 3</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>      Predicted
 Actual   0   1
-     0  82  47
-     1  46 105</code></pre>
+     0  87  45
+     1  48 100</code></pre>
 </div>
 </div>
 </section>
@@ -942,15 +944,15 @@ Actual   0   1
 </div>
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>train_precision</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6907895</code></pre>
+<pre><code>[1] 0.6896552</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>train_recall</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6953642</code></pre>
+<pre><code>[1] 0.6756757</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>train_specificity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6356589</code></pre>
+<pre><code>[1] 0.6590909</code></pre>
 </div>
 </div>
 <section id="questions-10" class="level4" data-number="13.4.3.1">
@@ -992,8 +994,8 @@ Actual   0   1
 <div class="cell-output cell-output-stdout">
 <pre><code>      Predicted
 Actual   0   1
-     0  33  96
-     1  12 139</code></pre>
+     0  41  91
+     1  13 135</code></pre>
 </div>
 </div>
 <p>Now try a threshold of 0.70.</p>
@@ -1018,8 +1020,8 @@ Actual   0   1
 <div class="cell-output cell-output-stdout">
 <pre><code>      Predicted
 Actual   0   1
-     0 112  17
-     1  91  60</code></pre>
+     0 118  14
+     1  86  62</code></pre>
 </div>
 </div>
 <section id="questions-11" class="level4" data-number="13.5.1.1">
@@ -1096,8 +1098,8 @@ Threshold selection
 <div class="cell-output cell-output-stdout">
 <pre><code>      Predicted
 Actual  0  1
-     0 42 12
-     1 19 47</code></pre>
+     0 37 14
+     1 17 52</code></pre>
 </div>
 </div>
 <p>Calculate test accuracy.</p>
@@ -1135,15 +1137,15 @@ Actual  0  1
 </div>
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>test_precision</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.7966102</code></pre>
+<pre><code>[1] 0.7878788</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>test_recall</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.7121212</code></pre>
+<pre><code>[1] 0.7536232</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>test_specificity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.7777778</code></pre>
+<pre><code>[1] 0.7254902</code></pre>
 </div>
 </div>
 <section id="questions-12" class="level4" data-number="13.6.2.1">
@@ -1187,8 +1189,8 @@ Actual  0  1
 <span id="cb85-24"><a href="#cb85-24" aria-hidden="true" tabindex="-1"></a>performance</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Dataset  Accuracy Precision    Recall Specificity
-1 Training 0.6678571 0.6907895 0.6953642   0.6356589
-2     Test 0.7416667 0.7966102 0.7121212   0.7777778</code></pre>
+1 Training 0.6678571 0.6896552 0.6756757   0.6590909
+2     Test 0.7416667 0.7878788 0.7536232   0.7254902</code></pre>
 </div>
 </div>
 <p>The <strong>training results</strong> tell us how well the model classifies observations that were used to estimate the model.</p>
