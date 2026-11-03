@@ -541,18 +541,18 @@ lm(formula = price ~ carat, data = train_data)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--14552.3   -810.9    -19.5    539.9  12719.4 
+-18581.9   -802.5    -19.3    536.4  12730.6 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept) -2264.81      15.60  -145.2   &lt;2e-16 ***
-carat        7776.36      16.81   462.5   &lt;2e-16 ***
+(Intercept) -2254.05      15.50  -145.4   &lt;2e-16 ***
+carat        7755.29      16.69   464.7   &lt;2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 1547 on 37756 degrees of freedom
-Multiple R-squared:   0.85, Adjusted R-squared:   0.85 
-F-statistic: 2.139e+05 on 1 and 37756 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 1540 on 37756 degrees of freedom
+Multiple R-squared:  0.8512,    Adjusted R-squared:  0.8512 
+F-statistic: 2.159e+05 on 1 and 37756 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <section id="questions-1" class="level4" data-number="12.1.7.1">
@@ -580,40 +580,40 @@ lm(formula = price ~ ., data = train_data)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
--15987.9   -591.2   -186.8    375.0  10697.5 
+-21440.6   -587.4   -179.7    374.1  10746.1 
 
 Coefficients:
              Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  5910.502    469.258  12.595  &lt; 2e-16 ***
-carat       11403.419     58.733 194.158  &lt; 2e-16 ***
-cut.L         578.063     26.754  21.606  &lt; 2e-16 ***
-cut.Q        -280.731     21.532 -13.038  &lt; 2e-16 ***
-cut.C         155.225     18.511   8.386  &lt; 2e-16 ***
-cut^4          -9.236     14.801  -0.624 0.532611    
-color.L     -1958.605     20.736 -94.454  &lt; 2e-16 ***
-color.Q      -661.352     18.868 -35.052  &lt; 2e-16 ***
-color.C      -158.033     17.615  -8.971  &lt; 2e-16 ***
-color^4        58.847     16.201   3.632 0.000281 ***
-color^5       -86.119     15.258  -5.644 1.67e-08 ***
-color^6       -48.205     13.859  -3.478 0.000505 ***
-clarity.L    4091.936     36.295 112.740  &lt; 2e-16 ***
-clarity.Q   -1916.505     33.904 -56.527  &lt; 2e-16 ***
-clarity.C     977.152     28.974  33.725  &lt; 2e-16 ***
-clarity^4    -365.340     23.094 -15.820  &lt; 2e-16 ***
-clarity^5     229.362     18.819  12.188  &lt; 2e-16 ***
-clarity^6      10.605     16.350   0.649 0.516578    
-clarity^7      78.192     14.435   5.417 6.10e-08 ***
-depth         -67.061      5.282 -12.695  &lt; 2e-16 ***
-table         -22.049      3.491  -6.316 2.72e-10 ***
-x           -1067.813     36.999 -28.860  &lt; 2e-16 ***
-y              -5.894     21.728  -0.271 0.786210    
-z             -19.285     34.004  -0.567 0.570624    
+(Intercept)  5988.757    465.562  12.864  &lt; 2e-16 ***
+carat       11256.955     57.536 195.652  &lt; 2e-16 ***
+cut.L         567.072     26.787  21.169  &lt; 2e-16 ***
+cut.Q        -289.526     21.480 -13.479  &lt; 2e-16 ***
+cut.C         131.936     18.487   7.137 9.74e-13 ***
+cut^4         -19.714     14.754  -1.336   0.1815    
+color.L     -1946.820     20.766 -93.752  &lt; 2e-16 ***
+color.Q      -685.850     18.893 -36.302  &lt; 2e-16 ***
+color.C      -172.038     17.594  -9.778  &lt; 2e-16 ***
+color^4        40.655     16.116   2.523   0.0117 *  
+color^5      -105.352     15.219  -6.923 4.51e-12 ***
+color^6       -60.886     13.831  -4.402 1.07e-05 ***
+clarity.L    4022.196     35.769 112.449  &lt; 2e-16 ***
+clarity.Q   -1897.854     33.333 -56.937  &lt; 2e-16 ***
+clarity.C     927.897     28.564  32.485  &lt; 2e-16 ***
+clarity^4    -354.830     22.865 -15.519  &lt; 2e-16 ***
+clarity^5     222.998     18.746  11.896  &lt; 2e-16 ***
+clarity^6      21.238     16.357   1.298   0.1941    
+clarity^7      94.265     14.441   6.528 6.77e-11 ***
+depth         -65.178      5.259 -12.394  &lt; 2e-16 ***
+table         -28.287      3.467  -8.159 3.49e-16 ***
+x           -1014.223     36.079 -28.111  &lt; 2e-16 ***
+y              13.539     19.517   0.694   0.4879    
+z             -57.213     35.330  -1.619   0.1054    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 1128 on 37734 degrees of freedom
-Multiple R-squared:  0.9202,    Adjusted R-squared:  0.9201 
-F-statistic: 1.892e+04 on 23 and 37734 DF,  p-value: &lt; 2.2e-16</code></pre>
+Residual standard error: 1126 on 37734 degrees of freedom
+Multiple R-squared:  0.9205,    Adjusted R-squared:  0.9205 
+F-statistic: 1.901e+04 on 23 and 37734 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <section id="questions-2" class="level4" data-number="12.1.8.1">
@@ -705,9 +705,9 @@ F-statistic: 1.892e+04 on 23 and 37734 DF,  p-value: &lt; 2.2e-16</code></pre>
 <span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>model_comparison</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                      model training_MSE
-1            Model 1: Carat    2391631.0
-2   Model 2: All predictors    1272376.6
-3 Model 3: All interactions     453861.2</code></pre>
+1            Model 1: Carat    2372136.7
+2   Model 2: All predictors    1266408.4
+3 Model 3: All interactions     462266.6</code></pre>
 </div>
 </div>
 <section id="questions-3" class="level4" data-number="12.1.13.1">
@@ -791,10 +791,10 @@ Training performance and model complexity
 <span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>model_comparison</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                      model training_MSE test_MSE
-1            Model 1: Carat    2391631.0  2413194
-2   Model 2: All predictors    1272376.6  1287958
-3 Model 3: All interactions     453861.2  1860862</code></pre>
+<pre><code>                      model training_MSE  test_MSE
+1            Model 1: Carat    2372136.7 2458205.5
+2   Model 2: All predictors    1266408.4 1301243.7
+3 Model 3: All interactions     462266.6  482509.8</code></pre>
 </div>
 </div>
 <section id="questions-4" class="level4" data-number="12.1.14.1">

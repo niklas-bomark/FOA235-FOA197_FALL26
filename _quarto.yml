@@ -3,7 +3,7 @@ project:
   execute-dir: project
 
 book:
-  title: "FOA235 – Business Analytics"
+  title: "FOA235/197 – Business Analytics"
   author: "Niklas Bomark"
   date: "8/27/2026"
   chapters:
