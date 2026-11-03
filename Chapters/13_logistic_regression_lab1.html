@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>13&nbsp; Logistic Regression: Lab 1 – FOA235 – Business Analytics</title>
+<title>13&nbsp; Logistic Regression: Lab 1 – FOA235/197 – Business Analytics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -159,7 +159,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">FOA235 – Business Analytics</a> 
+      <a href="../">FOA235/197 – Business Analytics</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -851,16 +851,16 @@ glm(formula = purchase ~ website_visits, family = binomial, data = train_data)
 
 Coefficients:
                Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)    -2.87660    0.47294  -6.082 1.18e-09 ***
-website_visits  0.38286    0.05923   6.464 1.02e-10 ***
+(Intercept)    -2.63583    0.46642  -5.651 1.59e-08 ***
+website_visits  0.35527    0.05814   6.111 9.91e-10 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 387.25  on 279  degrees of freedom
-Residual deviance: 331.42  on 278  degrees of freedom
-AIC: 335.42
+    Null deviance: 386.43  on 279  degrees of freedom
+Residual deviance: 336.91  on 278  degrees of freedom
+AIC: 340.91
 
 Number of Fisher Scoring iterations: 4</code></pre>
 </div>
@@ -903,8 +903,8 @@ Number of Fisher Scoring iterations: 4</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>      Predicted
 Actual   0   1
-     0  87  45
-     1  48 100</code></pre>
+     0  85  44
+     1  46 105</code></pre>
 </div>
 </div>
 </section>
@@ -918,7 +918,7 @@ Actual   0   1
 <span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>train_accuracy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6678571</code></pre>
+<pre><code>[1] 0.6785714</code></pre>
 </div>
 </div>
 <p>Extract the four parts of the confusion matrix.</p>
@@ -940,19 +940,19 @@ Actual   0   1
 <div class="cell">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>train_accuracy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6678571</code></pre>
+<pre><code>[1] 0.6785714</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>train_precision</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6896552</code></pre>
+<pre><code>[1] 0.704698</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>train_recall</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6756757</code></pre>
+<pre><code>[1] 0.6953642</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>train_specificity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.6590909</code></pre>
+<pre><code>[1] 0.6589147</code></pre>
 </div>
 </div>
 <section id="questions-10" class="level4" data-number="13.4.3.1">
@@ -994,8 +994,8 @@ Actual   0   1
 <div class="cell-output cell-output-stdout">
 <pre><code>      Predicted
 Actual   0   1
-     0  41  91
-     1  13 135</code></pre>
+     0  36  93
+     1  11 140</code></pre>
 </div>
 </div>
 <p>Now try a threshold of 0.70.</p>
@@ -1020,8 +1020,8 @@ Actual   0   1
 <div class="cell-output cell-output-stdout">
 <pre><code>      Predicted
 Actual   0   1
-     0 118  14
-     1  86  62</code></pre>
+     0 113  16
+     1  93  58</code></pre>
 </div>
 </div>
 <section id="questions-11" class="level4" data-number="13.5.1.1">
@@ -1098,8 +1098,8 @@ Threshold selection
 <div class="cell-output cell-output-stdout">
 <pre><code>      Predicted
 Actual  0  1
-     0 37 14
-     1 17 52</code></pre>
+     0 39 15
+     1 19 47</code></pre>
 </div>
 </div>
 <p>Calculate test accuracy.</p>
@@ -1111,7 +1111,7 @@ Actual  0  1
 <span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a>test_accuracy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.7416667</code></pre>
+<pre><code>[1] 0.7166667</code></pre>
 </div>
 </div>
 <p>Extract the values.</p>
@@ -1133,19 +1133,19 @@ Actual  0  1
 <div class="cell">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>test_accuracy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.7416667</code></pre>
+<pre><code>[1] 0.7166667</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>test_precision</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.7878788</code></pre>
+<pre><code>[1] 0.7580645</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>test_recall</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.7536232</code></pre>
+<pre><code>[1] 0.7121212</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>test_specificity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.7254902</code></pre>
+<pre><code>[1] 0.7222222</code></pre>
 </div>
 </div>
 <section id="questions-12" class="level4" data-number="13.6.2.1">
@@ -1189,8 +1189,8 @@ Actual  0  1
 <span id="cb85-24"><a href="#cb85-24" aria-hidden="true" tabindex="-1"></a>performance</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Dataset  Accuracy Precision    Recall Specificity
-1 Training 0.6678571 0.6896552 0.6756757   0.6590909
-2     Test 0.7416667 0.7878788 0.7536232   0.7254902</code></pre>
+1 Training 0.6785714 0.7046980 0.6953642   0.6589147
+2     Test 0.7166667 0.7580645 0.7121212   0.7222222</code></pre>
 </div>
 </div>
 <p>The <strong>training results</strong> tell us how well the model classifies observations that were used to estimate the model.</p>
